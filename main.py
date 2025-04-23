@@ -66,5 +66,15 @@ while True:
             else:
                 print("Nothing to find in the Internet")
 
+        #says the meaning of last buffered word
+        elif "speak" in text:
+            if len(buffer) > 0:
+                word = list(buffer.keys())[-1]
+                text = f"{word} is a {buffer[word][0]['meanings'][0]['definitions'][0]['definition']}"
+                tts.say(text)
+                tts.runAndWait()
+            else:
+                print("Nothing to find in the Internet")
+
 
 
